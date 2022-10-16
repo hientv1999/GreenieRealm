@@ -1,0 +1,3 @@
+import time
+def getOffset():
+    print (str(-time.timezone))

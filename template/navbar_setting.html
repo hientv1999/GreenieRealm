@@ -1,0 +1,74 @@
+<div id="layoutSidenav_nav">
+    <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+        <div class="sb-sidenav-menu">
+            <div class="nav">
+                <a class="nav-link" href="../home.php"> 
+                    <div class="sb-nav-link-icon"><i class="fas fa-home"></i></div>
+                    Dashboard
+                </a>
+                <div class="sb-sidenav-menu-heading">Privacy</div>
+                <!--Email-->
+                <a class="nav-link collapsed" href="email.php" >
+                    <div class="sb-nav-link-icon"><i class="fas fa-mail-bulk"></i></div>
+                    Email
+                </a>
+                <!--Username-->
+                <a class="nav-link collapsed" href="username.php">
+                    <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                    Username
+                </a>
+                <!--Password-->
+                <a class="nav-link collapsed" href="password.php" >
+                    <div class="sb-nav-link-icon"><i class="fas fa-lock"></i></div>
+                    Password
+                </a>
+                <!--Language-->
+                <a class="nav-link collapsed" href="language.php" >
+                    <div class="sb-nav-link-icon"><i class="fas fa-language"></i></div>
+                    Language
+                </a>
+                <div class="sb-sidenav-menu-heading">Visualization</div>
+                <!--Graph-->
+                <a class="nav-link collapsed" href="graph.php" >
+                    <div class="sb-nav-link-icon"><i class="fas fa-chart-line"></i></div>
+                    Graph
+                </a>
+                <!--Data Format-->
+                <a class="nav-link collapsed" href="date_structure.php" >
+                    <div class="sb-nav-link-icon"><i class="fas fa-calendar-times"></i></div>
+                    Date Format
+                </a>
+                <!--Timezone-->
+                <a class="nav-link collapsed" href="timezone.php" >
+                    <div class="sb-nav-link-icon"><i class="fas fa-clock"></i></div>
+                    Timezone
+                </a>
+                <div class="sb-sidenav-menu-heading">Action</div>
+                <!--Delete Account-->
+                <?php
+                if ($_SESSION["privilege"] != 2) {
+                    ?>
+                        <!--Delete Account-->
+                        <a class="nav-link collapsed" href="delete_account.php?<?php echo htmlspecialchars($_SESSION["username"]); ?>-request" >
+                            <div class="sb-nav-link-icon"><i class="fas fa-eraser"></i></div>
+                            Delete Account
+                        </a>
+                    <?php
+                } else {
+                    ?>
+                        <!--Transfer Admin-->
+                        <a class="nav-link collapsed" href="transfer_admin.php" >
+                            <div class="sb-nav-link-icon"><i class="fas fa-eraser"></i></div>
+                            Transfer Admin
+                        </a>
+                    <?php
+                }
+                ?>
+            </div>
+        </div>
+        <div class="sb-sidenav-footer">
+            <div class="small">Logged in as: <?php echo htmlspecialchars($_SESSION["username"]); ?></div>
+            <!--ADD username-->
+        </div>
+    </nav>
+</div>

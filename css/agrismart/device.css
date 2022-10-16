@@ -1,0 +1,285 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600,300);
+            .frame {
+                position: relative;
+                display: flex;
+                width: calc(25% - 30px);
+                height: 18vw;
+                border-radius: 30px;
+                box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+                margin-right: 15px;
+                margin-left: 15px;
+                margin-bottom: 15px;
+                background: #ca7c4e;
+                background: -webkit-linear-gradient(bottom left, #eebe6c 0%, #ca7c4e 100%);
+                background: -moz-linear-gradient(bottom left, #eebe6c 0%, #ca7c4e 100%);
+                background: -o-linear-gradient(bottom left, #eebe6c 0%, #ca7c4e 100%);
+                background: linear-gradient(to top right, #eebe6c 0%, #ca7c4e 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EEBE6C', endColorstr='#CA7C4E',GradientType=1);
+                color: #786450;
+                font-family: 'Open Sans', Helvetica, sans-serif;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+            .center {
+                position: relative;
+                display: flex;
+                top: 10px;
+                left: 10px;
+                height: calc(100% - 20px);
+                width: calc(100% - 20px);
+                background: #fff;
+                border-radius: 30px;
+                overflow: hidden;
+                box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.3);
+            }
+            .profile {
+                float: left;
+                width: 65%;
+                height: 30%;
+                text-align: center;
+            }
+            .profile .image {
+                position: relative;
+                width: 5vw;
+                height: 5vw;
+                margin: 10% auto 0 auto;
+            }
+            .profile .image .circle-1, .profile .image .circle-2 {
+                position: absolute;
+                box-sizing: border-box;
+                width: calc(100% + 6px);
+                height: calc(100% + 6px);
+                top: -3px;
+                left: -3px;
+                border-width: 1px;
+                border-style: solid;
+                border-color: #786450 #786450 #786450 transparent;
+                border-radius: 50%;
+                transition: all 1.5s ease-in-out;
+            }
+            .profile .image .circle-2 {
+                width: calc(100% + 12px);
+                height: calc(100% + 12px);
+                top: -6px;
+                left: -6px;
+                border-color: #786450 transparent #786450 #786450;
+            }
+            .profile .image .edit {
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                font-size: 80%;
+                font-weight: 600;
+                border-radius: 50%;
+                color: #000000;
+                background: transparent;
+                opacity: 0%;
+                transition: 1.5s ease-in-out;
+                z-index: 999;
+                
+            }
+            .profile .image:hover .edit {
+                opacity: 90%;
+                transition: all 1.5s ease-in-out;
+            }
+
+            .profile .image img {
+                display: block;
+                opacity: 100%;
+                transition: 1.5s ease-in-out;
+                border-radius: 50%;
+                background: #f5e8df;
+            }
+            
+            .profile .image:hover img{
+                cursor: pointer;
+                opacity: 10%;
+                transition: all 1.5s ease-in-out;
+            }
+            .profile .image:hover .circle-1, .profile .image:hover .image .circle-2, .profile .image .image:hover .circle-2 {
+                transform: rotate(360deg);
+            }
+            .profile .image:hover .circle-2 {
+                transform: rotate(-360deg);
+            }
+            .profile .name {
+                font-size: 1.2vw;
+                font-weight: 600;
+                margin-top: 2vw;
+            }
+            .profile .location {
+                font-size: 0.8vw;
+                line-height: 1vw;
+            }
+            .profile .actions {
+                margin-top: 1.5vw;
+            }
+            .profile .actions .btn {
+                display: block;
+                width: 60%;
+                height: 60%;
+                margin: 0 auto 0 auto;
+                border-style: none;
+                font-size: 1vw;
+                font-weight: 600;
+                position: relative;
+                padding: 0;
+            }
+            .profile .actions .btn:focus {
+                outline: 0 !important;
+            }
+            .profile .actions .btn:hover:after {
+                opacity: 1;
+                transform: translateY(0) rotateX(0);
+            }
+           .profile .actions .btn:hover:before {
+                opacity: 0;
+                transform: translateY(50%) rotateX(90deg);
+            }
+
+            .profile .actions .btn:after {
+                top: 0;
+                left: 0;
+                width: 100%;
+                border: 1px solid #786450;
+                border-radius: 15px;
+                opacity: 0;
+                color: #adadaf;
+                display: block;
+                transition: 0.5s;
+                position: absolute;
+                background: #323237;
+                content: attr(data-back);
+                transform: translateY(-50%) rotateX(90deg);
+                line-height: 20px;
+            }
+
+            .profile .actions .btn:before {
+                top: 0;
+	            left: 0;
+                width: 100%;
+                border: 1px solid #786450;
+                border-radius: 15px;
+                opacity: 1;
+                color: var(--text-color);
+                display: block;
+                transition: 0.5s;
+                position: relative;
+                background: #ffffff;
+                content: attr(data-front);
+                transform: translateY(0) rotateX(0);
+		        line-height: 20px;
+            }
+            .stats {
+                float: left;
+                width: 35%;
+            }
+            .stats .box {
+                box-sizing: border-box;
+                width: 100%;
+                height: calc(25% - 1px);
+                background: #f5e8df;
+                text-align: center;
+                padding-top: 0.5vw;
+                transition: all 0.4s ease-in-out;
+            }
+            .stats .box:hover {
+                background: #e1cfc2;
+                cursor: pointer;
+            }
+            .stats .box:nth-child(even) {
+                margin: 1px 0;
+            }
+            .stats span {
+                display: block;
+            }
+            .stats .value {
+                font-size: 1vw;
+                font-weight: 600;
+            }
+            .stats .parameter {
+                font-size: 1vw;
+            }
+            
+            @media (max-width: 576px) {
+                .frame {
+                    width: calc(100% - 30px) !important;
+                    height: 50vw !important;
+                }
+                .profile .image {
+                    margin: 10% auto 0 auto;
+                    width: 10vw !important;
+                    height: 10vw !important;
+                }
+                .profile .name {
+                    font-size: 3vw !important;
+                    font-weight: 600 !important;
+                    margin-top: 3vw !important;
+                }
+                .profile .location {
+                    font-size: 2.4vw !important;
+                    line-height: 3vw !important;
+                }
+                .profile .actions{
+                    margin-top: 4vw !important;
+                }
+                
+                .profile .actions .btn {
+                    width: 40% !important;
+                    font-size: 3vw !important;
+                }
+                .stats .box {
+                    height: calc(25% - 1px) !important;
+                    padding-top: 5px !important;
+                }
+                .stats .value {
+                    font-size: 3vw !important;
+                }
+                .stats .parameter {
+                    font-size: 3vw !important;
+                }
+            }
+            
+            @media (min-width: 576px) and (max-width: 992px){
+                .frame {
+                    width: calc(50% - 30px) !important;
+                    height: 35vw !important;
+                }
+                .profile .image {
+                    width: 10vw !important;
+                    height: 10vw !important;
+                }
+                .profile .name {
+                    font-size: 2vw !important;
+                    font-weight: 600 !important;
+                    margin-top: 2vw !important;
+                }
+                .profile .location {
+                    font-size: 1.6vw !important;
+                    line-height: 2vw !important;
+                }
+                .profile .actions .btn {
+                    font-size: 2vw !important;
+                }
+                .stats .box {
+                    height: calc(25% - 1px) !important;
+                    padding-top: 10px !important;
+                }
+                .stats .value {
+                    font-size: 2vw !important;
+                }
+                .stats .parameter {
+                    font-size: 2vw !important;
+                }
+            }
+
+            @media (min-width: 1440px){
+                .profile .actions .btn {
+                    width: 50% !important;
+                    height: 50% !important;
+                    font-size: 0.8vw !important;
+                }
+            }
